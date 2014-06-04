@@ -8,7 +8,7 @@ int dutyPin = A1;
 float maxFreq = 60.; // in Hz
 float fineFreq = 2.;
 
-float maxDuty = 5000; // ratio
+float maxDuty = 5000; // maximum flash duration in µS
 
 float freq = 60.; // in Hz
 float ffreq = 0;
@@ -19,6 +19,7 @@ long dutyDelay = 100.;
 void setup() {
   pinMode(outPin, OUTPUT);
   pinMode(freqPin, INPUT);
+  pinMode(fineFreqPin, INPUT);
   pinMode(dutyPin, INPUT);
 }
 
