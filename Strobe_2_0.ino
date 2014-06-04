@@ -16,7 +16,7 @@ float duty = .1; // ratio
 long strobeDelay = 100.; // in µS
 long dutyDelay = 100.;
 
-void setup() {
+void setup() {
   pinMode(outPin, OUTPUT);
   pinMode(freqPin, INPUT);
   pinMode(dutyPin, INPUT);
@@ -48,26 +48,26 @@ float getVal(int pin) {
   return val;
 }
 
-void setFreq(float in){
+void setFreq(float in) {
   if(in > .02)
     freq = maxFreq * in + ffreq;
   else freq = maxFreq * .01 + ffreq;
 }
 
-void setFineFreq(float in){
+void setFineFreq(float in) {
   ffreq = (in - .5) * 2. * fineFreq;
 }
 
-void setDuty(float in){
+void setDuty(float in) {
   duty = in;
 }
 
 // Returns delay time in µS
-long getOffTime(long f) {
+long getOffTime(long f) {
   return 1. / f * 1000000;
 }
 
-long getDutyTime(float d) {
+long getDutyTime(float d) {
   return d * maxDuty + 1;
 }
 
